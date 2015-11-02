@@ -5,7 +5,10 @@ app.controller('InstalerController', function ($scope) {
 
 
   $scope.buscadir=function() {  
-	  $scope.diretorio = buscaDir.buscaDir($scope.diretorio); 
+	  $scope.rootFolder = buscaDir.buscaDir($scope.rootFolder); 
+  }
+  $scope.loaddir=function() {  
+	  $scope.rootFolder = buscaDir.ultima(); 
   }
 });
 

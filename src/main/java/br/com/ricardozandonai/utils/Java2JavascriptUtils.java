@@ -1,4 +1,4 @@
-package br.com.ricardozandonai;
+package br.com.ricardozandonai.utils;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -19,6 +19,7 @@ import netscape.javascript.JSObject;
  * 
  * @author lipido
  */
+@SuppressWarnings("restriction")
 public class Java2JavascriptUtils {
 	
 	private static Map<WebEngine, Map<String, Object>> 
@@ -42,6 +43,7 @@ public class Java2JavascriptUtils {
 	 * @param varname The name of the variable in javascript.
 	 * @param backend The Java backend object.
 	 */
+
 	public static void connectBackendObject(
 			final WebEngine webEngine,
 			final String varname, 
