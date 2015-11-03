@@ -4,22 +4,28 @@ import java.util.prefs.Preferences;
 
 import br.com.ricardozandonai.variables;
 
+/**
+ * Utilities to get information about directorys of instalation.
+ * 
+ * It also allows to call callback functions.
+ * 
+ * @author Ricardo Zandonai
+ */
 public class WindowsRegUtils {
-	Preferences prefs = Preferences.userNodeForPackage(this.getClass());
-	
-	public Preferences getprefs(){
-		return prefs;
-		
-	}
-	public static String BuscaInstalacao() {
-		WindowsRegUtils wru = new WindowsRegUtils();
-		Preferences prefs = Preferences.userNodeForPackage(wru.getprefs().getClass());
+	private static Preferences prefs = Preferences.userNodeForPackage(WindowsRegUtils.class);
+
+	public static String BuscaDirInstalacao() {
 		return prefs.get(variables.getDIRKEY(), null);
-		}
-	
+	}
+
+	public static void SetaDirInstalacao(String dir) {
+		prefs.put(variables.getDIRKEY(), dir);
+	}
+
 	public static String BuscaExiste() {
-		WindowsRegUtils wru = new WindowsRegUtils();
-		Preferences prefs = Preferences.userNodeForPackage(wru.getprefs().getClass());
 		return prefs.get(variables.getINSTEXISTS(), null);
-		}
+	}
+	public static void SetaExiste() {
+		prefs.put(variables.getINSTEXISTS(), "true");
+	}
 }

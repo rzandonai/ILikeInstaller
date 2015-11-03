@@ -1,5 +1,11 @@
 package br.com.ricardozandonai;
-
+/**
+ * Utilities to get information about directorys of instalation.
+ * 
+ * It also allows to call callback functions.
+ * 
+ * @author Ricardo Zandonai
+ */
 public class variables{
 	private static String programName = "ILikeInstaller ";
 	private static final String KEY = "br.com.ricardozandonai";

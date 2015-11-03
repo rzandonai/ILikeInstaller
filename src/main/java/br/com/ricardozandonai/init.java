@@ -3,14 +3,20 @@ package br.com.ricardozandonai;
 import static br.com.ricardozandonai.utils.Java2JavascriptUtils.connectBackendObject;
 
 import br.com.ricardozandonai.utils.Utils;
-import br.com.ricardozandonai.utils.WindowsRegUtils;
+import br.com.ricardozandonai.utils.dirUtils;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.web.WebEvent;
 import javafx.scene.web.WebView;
-
+/**
+ * Utilities to get information about directorys of instalation.
+ * 
+ * It also allows to call callback functions.
+ * 
+ * @author Ricardo Zandonai
+ */
 
 @SuppressWarnings("restriction")
 public class init extends Application {
@@ -24,9 +30,7 @@ public class init extends Application {
 
 	private void Init(Stage stage) {
 		boolean atualiza = Utils.isUpdateInstalation();
-		
 
-		
 		WebView browser = new WebView();
 		if(atualiza){
 			browser.getEngine().load(getClass().getResource(UPDATETPAGE).toExternalForm());
@@ -43,7 +47,7 @@ public class init extends Application {
         
         connectBackendObject(
         		browser.getEngine(),
-				"buscaDir", new buscaDir());
+				"buscaDir", new dirUtils());
         
         
         connectBackendObject(

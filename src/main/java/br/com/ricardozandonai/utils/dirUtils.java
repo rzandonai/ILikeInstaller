@@ -1,10 +1,10 @@
-package br.com.ricardozandonai;
+package br.com.ricardozandonai.utils;
 
 import java.io.File;
 
 import javax.swing.*;
 
-import br.com.ricardozandonai.utils.WindowsRegUtils;
+import br.com.ricardozandonai.variables;
 /**
  * Utilities to get information about directorys of instalation.
  * 
@@ -12,7 +12,7 @@ import br.com.ricardozandonai.utils.WindowsRegUtils;
  * 
  * @author Ricardo Zandonai
  */
-public class buscaDir {
+public class dirUtils {
 
 	/**
 	 * Call a java file chooser to chose what dir you whant installl
@@ -37,8 +37,7 @@ public class buscaDir {
 	}
 	
 	public String ultima(){
-
-		String dir = WindowsRegUtils.BuscaInstalacao();
+		String dir = WindowsRegUtils.BuscaDirInstalacao();
 		if (dir == null){
 			dir = variables.getDIRKEY();
 		}
